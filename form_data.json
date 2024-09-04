@@ -1,0 +1,39 @@
+{
+    "person1": {
+        "gender": "female",
+        "first_name": "Evelyn",
+        "last_name": "Müller",
+        "address": "Musterstraße 12",
+        "city": "Berlin",
+        "postal_code": "10117",
+        "status": "TU-Alumni",
+        "student_number": "-",
+        "email": "ev.muell@gmail.com",
+        "phone": "017423456789",
+        "birthdate": "15.07.1990"
+    },
+    "person2": {
+        "gender": "male",
+        "first_name": "Lukas",
+        "last_name": "Schmidt",
+        "address": "Musterstraße 12",
+        "city": "Berlin",
+        "postal_code": "10117",
+        "status": "S-TU",
+        "student_number": "456789",
+        "email": "lu.schmidt@gmail.com",
+        "phone": "017423456789",
+        "birthdate": "18.01.2006"
+    },
+    "banking": {
+        "iban": "DE89370400400432013000",
+        "bic": "GENODEF1P01"
+    },
+    "slots_overview_url": "https://www.tu-sport.de/sportprogramm/kurse/?tx_dwzeh_courses%5Baction%5D=show&tx_dwzeh_courses%5BsportsDescription%5D=768&cHash=302c5e58dded9777b08d1305c1398488",
+    "desired_day": "Mittwoch",
+    "desired_start_time": 14,
+    "desired_duration_h": 1,
+    "double_booking": false,
+    "request_refresh_interval_s": 100,
+    "review_time_s": 10
+}
