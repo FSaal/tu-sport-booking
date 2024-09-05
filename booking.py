@@ -80,8 +80,8 @@ class FormFiller:
         self.page.locator(f'input[name="Tel{index}"]').fill(person.phone)
 
         # Fill birthdate if visible (only necessary on some booking sites)
-        if self.page.locator('input[name="Geburtsdatum"]').is_visible():
-            self.page.locator('input[name="Geburtsdatum"]').fill(person.birthdate)
+        if self.page.locator(f'input[name="Geburtsdatum{index}"]').is_visible():
+            self.page.locator(f'input[name="Geburtsdatum{index}"]').fill(person.birthdate)
 
 
 class BookingManager:
@@ -320,6 +320,11 @@ class BookingManager:
         page.locator('input[name="iban"]').fill(self.bank_details.iban)
         page.locator('input[name="bic"]').fill(self.bank_details.bic)
         page.locator('input[name="BuchBed"]').check()
+        page.get_by_role("button", name="verbindlich anmelden").click()
+        
+        # Third page - Confirmation
+        # Checkbox to confirm that data is correct and banking account has enough balance
+        page.get_by_role("checkbox").check()
 
         # Confirm booking after review time is over
         t0 = time.time()
@@ -332,7 +337,7 @@ class BookingManager:
                 end="\r",
             )
             time.sleep(1)
-        page.get_by_role("button", name="verbindlich anmelden").click()
+        page.get_by_role("button", name="kostenpflichtig buchen").click()
         # Keep page open to let user see booking confirmation
         time.sleep(10)
         context.close()
